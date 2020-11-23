@@ -5,7 +5,7 @@ export const Container = styled.View`
   align-items: center;
   justify-content: space-around;
 
-  margin-top: 50px;
+  margin-top: 55px;
 `;
 
 export const Button = styled.TouchableOpacity`

@@ -1,10 +1,11 @@
 export interface RootState {
+  TimeReducer: any;
   time: number;
   timerOn: boolean;
 }
 
 const INITIAL_STATE = {
-  time: 0,
+  time: 1500000,
   timerOn: false,
 };
 
@@ -13,7 +14,7 @@ export default function TimeReducer(state = INITIAL_STATE, action: { type: any; 
     case 'UPDATE_TIME':
       return { ...state, time: action.value };
     case 'UPDATE_TIMERON':
-      return { ...state, timeOn: action.value };
+      return { ...state, timerOn: action.value };
     default:
       return state;
   }
