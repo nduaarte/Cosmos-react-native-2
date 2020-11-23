@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View } from 'react-native';
-import { Circle } from 'react-native-progress';
+import { useSelector } from 'react-redux';
+import moment from 'moment';
 
-
-import { Container } from './styles';
+import { RootState } from '../../../Redux/reducers/TimeReducer';
+import { Container, Timer } from './styles';
 
 const Clock: React.FC = () => {
+  const time = useSelector((state: RootState) => state.time);
+  const timeFormated = moment(time).format('mm:ss');
 
   return (
     <Container>
-      <Surface width={500} height={500}>
-        <Shape d={new Path().moveTo(0, 0).lineTo(200, 200)} fill="#d39494" />
-      </Surface>
+      <Timer>{timeFormated}</Timer>
     </Container>
   );
 }
 
 export default Clock;
+
+  // const _20min = 1200000;
+  // const _10min = 600000;
+  // const _5min = 300000;
