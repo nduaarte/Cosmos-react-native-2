@@ -1,13 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import moment from 'moment';
 
-import { RootState } from '../../../Redux/reducers/TimeReducer';
 import { Container, Timer } from './styles';
 
-const Clock: React.FC = () => {
-  const time = useSelector((state: RootState) => state.TimeReducer.time);
-  const timeFormated = moment(time).format('mm:ss');
+interface PropsType {
+  timing: number;
+}
+
+const Clock: React.FC<PropsType> = ({ timing }) => {
+  const timeFormated = moment(timing).format('mm:ss');
 
   return (
     <Container>

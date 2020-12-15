@@ -15,7 +15,7 @@ const MenuButtons: React.FC = () => {
 
   return(
     <Container>
-      <Button onPress={() => changeTime(_25min)} activeOpacity={0.8}>
+      <Button onPress={() => changeTime(5000)} activeOpacity={0.8}>
         <TextButton>Pomodoro</TextButton>
       </Button>
 
